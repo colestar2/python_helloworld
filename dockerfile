@@ -1,11 +1,14 @@
 # Dockerfile
 
 # 기본 이미지로 Python 3.8 이미지를 사용
-FROM python:3.8
+FROM ubuntu:20.04
 
 # 작업 디렉토리를 /app으로 설정
 WORKDIR /app
 
+
+
+RUN apt-get update / && apt-get install -y python3
 # 현재 디렉토리의 모든 파일을 Docker 이미지의 /app 디렉토리에 복사
 COPY . /app
 
@@ -15,4 +18,4 @@ COPY . /app
 # RUN pip install -r requirements.txt
 
 # 컨테이너가 시작될 때 실행할 명령을 지정합니다.
-CMD ["python", "hello.py"]
+CMD ["python3", "hello.py"]
