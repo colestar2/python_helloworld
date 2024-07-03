@@ -8,7 +8,7 @@ WORKDIR /app
 
 
 
-RUN apt-get update / && apt-get install -y python3
+RUN apt-get update && apt-get install -y python3
 # 현재 디렉토리의 모든 파일을 Docker 이미지의 /app 디렉토리에 복사
 COPY . /app
 
